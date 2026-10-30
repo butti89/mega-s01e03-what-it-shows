@@ -34,3 +34,14 @@ Support desk. Decision records: whoever signed them.
 ---
 
 Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
+
+## Build
+
+```
+npm install
+npm run build
+```
+
+The build prerenders every page into `rendered/`, the pages as the desk sees them. The split of
+#4471 is at `src/routes/kb/incidents/4471/problems/+page.svx`, rendered as
+`rendered/kb/incidents/4471/problems.html`.

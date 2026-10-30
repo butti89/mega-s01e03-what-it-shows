@@ -1,0 +1,48 @@
+---
+layout: runbook
+title: '#4471 · three problems, three tickets'
+owner: butti89
+status: open
+reviewed: 2026-10-30
+signature: butti89
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+[#4471](/kb/incidents/4471) says one issue, one fix queued. Its own cause table already shows more
+than one cause, and the reports show three problems. Each problem now has a ticket of its own.
+
+<ProblemTable ticket={4471} />
+
+<Callout>
+Fixing the parser closes only the first ticket. The form hint and the one-day moves stay broken
+until their own fixes ship.
+</Callout>
+
+## How the reports were split
+
+Every report body was read, not just its subject or its intake tag.
+
+- **parser.** The shared parser reads dates month first and every tenant on file writes the day
+  first, so day and month swap. Placed by tenant, as `causes.ts` does.
+- **hint.** The booking-v3 form prints `MM/DD/YYYY` under its date field and reads the date day
+  first. People type what the hint says. Only the form channel of booking-v3 tenants.
+- **one-day.** The date moves by one day, or differs between attendees in different timezones. A
+  day/month swap keeps both numbers and cannot do that. These are the reports the desk already read
+  as one-day moves (`desk-notes.json`); they are no longer filed under `parser`.
+
+## Why one ticket hid three
+
+[Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges on the subject line, and the
+[triage page](/kb/triage/dedupe) says to merge when unsure. Three problems with the same symptom
+got the same subjects. Intake tags did not help: intake guesses from the reporter's browser, and the
+cause follows the tenant.
+
+The count of a merged ticket is not the count of one bug. Before a ticket is marked known, split
+it by cause and check each cause against the bodies.
+
+<RenderStamp {signature} />
