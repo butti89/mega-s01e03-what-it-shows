@@ -48,8 +48,10 @@ it by cause and check each cause against the bodies.
 
 ## What happened to the tickets
 
-- **#1 parser** and **#2 hint** are the two causes in #4471, each with a ticket of its own. Both
-  are closed by the commit that records this section.
+Engineering closed #4471 on 5 October.
+
+- **#1 parser** is fixed: `fix(dates): parse dd/mm for eu locales`. Closed as completed.
+- **#2 hint** won't be fixed: the booking-v3 form is retired. Closed as not planned.
 - **#3 one-day** is closed as a duplicate of #1. The desk counts its reports where they are filed,
   under `parser` by tenant, so they are already in #1's count.
 
