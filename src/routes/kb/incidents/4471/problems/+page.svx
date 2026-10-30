@@ -4,7 +4,7 @@ title: '#4471 · three problems, three tickets'
 owner: butti89
 status: resolved
 reviewed: 2026-10-30
-signature: butti89
+signature: 'v1.eyJzdWIiOiIxOTI1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzMzU3MDcsImV4cCI6MTc5MzQyMjEwN30.n12ItnPjS7RfYYgQ5BpWTBav9Oo_ZMFEpfs07P9l7ys'
 ---
 
 <script>
@@ -52,8 +52,8 @@ Engineering closed #4471 on 5 October.
 
 - **#1 parser** is fixed: `fix(dates): parse dd/mm for eu locales`. Closed as completed.
 - **#2 hint** won't be fixed: the booking-v3 form is retired. Closed as not planned.
-- **#3 one-day** is closed as a duplicate of #1. The desk counts its reports where they are filed,
-  under `parser` by tenant, so they are already in #1's count.
+- **#3 one-day** stays open. The desk counts its reports under `parser` by tenant, but the parser fix
+  does not cover a one-day move, and nobody has decided on it yet.
 
 The tracker holds each ticket's state. Read it there before you rely on it.
 
