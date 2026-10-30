@@ -33,7 +33,8 @@ Every report body was read, not just its subject or its intake tag.
   first. People type what the hint says. Only the form channel of booking-v3 tenants.
 - **one-day.** The date moves by one day, or differs between attendees in different timezones. A
   day/month swap keeps both numbers and cannot do that. These are the reports the desk already read
-  as one-day moves (`desk-notes.json`); they are no longer filed under `parser`.
+  as one-day moves (`desk-notes.json`). The desk counts them where they are filed, under `parser` by
+  tenant, and they get a ticket of their own.
 
 ## Why one ticket hid three
 
